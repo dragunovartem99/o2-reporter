@@ -1,7 +1,14 @@
 <template>
   <h1>O&#8322; Reporter</h1>
   <div class="app">
-    <textarea v-model="test" name="" id="" cols="30" rows="10"></textarea>
+    <textarea
+      class="raw"
+      v-model="test"
+      name=""
+      id=""
+      cols="30"
+      rows="10"
+    ></textarea>
     <div class="code">
       <fakeTag type="p">{{ test }}</fakeTag>
     </div>
@@ -30,6 +37,14 @@ h1 {
 .app {
   display: flex;
 }
+
+.raw,
 .code {
+  flex: 1;
+  padding: 3rem;
+}
+
+.code {
+  background-color: #333;
 }
 </style>
