@@ -1,6 +1,6 @@
 <template>
   <div class="faketag">
-    <span>&lt;{{ tag }}&gt;</span><slot /><span>&lt;/{{ tag }}&gt</span>
+    <span> &lt;{{ tag }}&gt;</span><slot /><span>&lt;/{{ tag }}&gt</span>
   </div>
 </template>
 <script>

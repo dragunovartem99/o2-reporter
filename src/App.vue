@@ -13,13 +13,24 @@
       rows="10"
     ></textarea>
     <div class="code">
-      <span>&lt;a <span>href</span>="{{ test.split(/\r?\n/)[0] }}"&gt;</span>
+      <span
+        >&lt;a class="report" <span>href</span>="{{
+          test.split(/\r?\n/)[0]
+        }}"&gt;</span
+      >
       <fakeTag tag="h2">{{ test.split(/\r?\n/)[1] }}</fakeTag>
       <div v-if="test.split(/\r?\n/)[1]">
         <fakeTag v-for="n in test.split(/\r?\n/).length - 2" tag="p">{{
           test.split(/\r?\n/)[n + 1]
         }}</fakeTag>
       </div>
+      <fakeTag tag="style">
+        <span
+          >.calendar-day[data-success="1"]{background-color:orange}.report{color:#111}.report
+          h2{font-weight:bold;margin-bottom:2rem;font-size:3rem}.report
+          p:last-of-type{margin-bottom:-1rem}</span
+        >
+      </fakeTag>
       <span>&lt;/a&gt;</span>
     </div>
   </div>
