@@ -1,4 +1,7 @@
 <template>
+  <a class="mainlink" target="_blank" href="https://report.odva.pro/"
+    >Go to Report</a
+  >
   <h1>O&#8322; Reporter</h1>
   <div class="app">
     <textarea
@@ -33,6 +36,15 @@ export default {
 <style scoped>
 h1 {
   text-align: center;
+  margin-bottom: 2rem;
+}
+.mainlink {
+  background-color: #ddd;
+  color: #111;
+  display: block;
+  text-align: center;
+  padding: 1rem 3rem;
+  margin-bottom: 2rem;
 }
 .app {
   display: flex;
