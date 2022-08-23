@@ -15,15 +15,19 @@
     <div class="code">
       <span>&lt;a <span>href</span>="{{ test.split(/\r?\n/)[0] }}"&gt;</span>
       <fakeTag tag="h2">{{ test.split(/\r?\n/)[1] }}</fakeTag>
-
       <div v-if="test.split(/\r?\n/)[1]">
         <fakeTag v-for="n in test.split(/\r?\n/).length - 2" tag="p">{{
           test.split(/\r?\n/)[n + 1]
         }}</fakeTag>
       </div>
-
       <span>&lt;/a&gt;</span>
     </div>
+  </div>
+  <div class="help">
+    <h2>Как это работает</h2>
+    <p>В первую строчку идет ссылка — не забудьте https://</p>
+    <p>Во вторую строку идет название задачи</p>
+    <p>При желании можно добавить описание (3 строчка и далее)</p>
   </div>
 </template>
 
@@ -58,6 +62,14 @@ h1 {
 }
 .app {
   display: flex;
+  margin-bottom: 2rem;
+}
+.help {
+  text-align: center;
+  color: #999;
+}
+.help h2 {
+  color: #ddd;
 }
 span span {
   color: orange;
