@@ -1,13 +1,18 @@
 <template>
-  <span>&lt;{{ type }}&gt;</span><slot /><span>&lt;/{{ type }}&gt</span>
+  <div class="faketag">
+    <span>&lt;{{ tag }}&gt;</span><slot /><span>&lt;/{{ tag }}&gt</span>
+  </div>
 </template>
 <script>
 export default {
-  props: ["type"],
+  props: ["tag"],
 };
 </script>
-<style>
+<style scoped>
 span {
   color: orange;
+}
+.faketag {
+  margin-left: 1rem;
 }
 </style>
