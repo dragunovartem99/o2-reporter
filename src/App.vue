@@ -1,14 +1,11 @@
 <template>
   <h1>O&#8322; Reporter</h1>
 
-  <select name="" id="">
-    <option value="">Выбери проект</option>
-    <option v-for="project in projects" value="">{{ project.name }}</option>
-  </select>
   <div class="app">
     <textarea
       class="raw"
-      v-model="test"
+      ref="input"
+      v-model="userInput"
       name=""
       id=""
       cols="30"
@@ -17,13 +14,13 @@
     <div ref="output" class="code">
       <span
         >&lt;a class="report" <span>href</span>="{{
-          test.split(/\r?\n/)[0]
+          userInput.split(/\r?\n/)[0]
         }}"&gt;</span
       >
-      <fakeTag tag="h2">{{ test.split(/\r?\n/)[1] }}</fakeTag>
-      <div v-if="test.split(/\r?\n/)[1]">
-        <fakeTag v-for="n in test.split(/\r?\n/).length - 2" tag="p">{{
-          test.split(/\r?\n/)[n + 1]
+      <fakeTag tag="h2">{{ userInput.split(/\r?\n/)[1] }}</fakeTag>
+      <div v-if="userInput.split(/\r?\n/)[1]">
+        <fakeTag v-for="n in userInput.split(/\r?\n/).length - 2" tag="p">{{
+          userInput.split(/\r?\n/)[n + 1]
         }}</fakeTag>
       </div>
       <fakeTag tag="style">
@@ -35,8 +32,14 @@
       </fakeTag>
       <span>&lt;/a&gt;</span>
     </div>
+    <select @change="setProject">
+      <option>Выбери проект</option>
+      <option v-for="project in projects">
+        {{ project.name }}
+      </option>
+    </select>
+    <div @click="copyAndGo" class="mainlink">Go to Report</div>
   </div>
-  <div @click="copyAndGo" class="mainlink">Go to Report</div>
   <div class="help">
     <h2>Как это работает</h2>
     <p>В первую строчку идет ссылка — не забудьте https://</p>
@@ -54,7 +57,7 @@ export default {
   },
   data() {
     return {
-      test: "",
+      userInput: "",
       projects: [
         {
           name: "🌕 Serenity Основной сайт",
@@ -80,6 +83,15 @@ export default {
     };
   },
   methods: {
+    setProject(event) {
+      const selectedProject = this.projects.find(
+        (o) => o.name === event.target.value
+      );
+      this.userInput =
+        selectedProject.link + "\n" + selectedProject.name + "\n";
+      this.$refs.input.focus();
+    },
+
     copy() {
       navigator.clipboard.writeText(this.$refs.output.textContent);
     },
@@ -97,6 +109,7 @@ h1 {
   margin-bottom: 2rem;
 }
 select {
+  text-align: center;
   font-family: inherit;
   font-size: 1.5rem;
 }
@@ -107,11 +120,10 @@ select {
   display: block;
   text-align: center;
   padding: 1rem 3rem;
-  margin-bottom: 2rem;
 }
 .app {
-  display: flex;
-  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 .help {
   text-align: center;
@@ -125,11 +137,11 @@ span span {
 }
 .raw,
 .code {
-  font-size: 1rem;
-  flex: 1;
+  flex-basis: 50%;
   padding: 3rem;
 }
 .code {
+  font-size: 0.75rem;
   background-color: #222;
 }
 </style>
