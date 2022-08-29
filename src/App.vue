@@ -100,6 +100,6 @@ span span {
   padding: 3rem;
 }
 .code {
-  background-color: #333;
+  background-color: #222;
 }
 </style>
