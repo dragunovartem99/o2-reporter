@@ -1,6 +1,10 @@
 <template>
   <h1>O&#8322; Reporter</h1>
 
+  <select name="" id="">
+    <option value="">Выбери проект</option>
+    <option v-for="project in projects" value="">{{ project.name }}</option>
+  </select>
   <div class="app">
     <textarea
       class="raw"
@@ -51,6 +55,28 @@ export default {
   data() {
     return {
       test: "",
+      projects: [
+        {
+          name: "🌕 Serenity Основной сайт",
+          link: "https://www.notion.so/odva/446ab218c4c44d44bbe2dde8fe472c70?v=f5ec53126359412dbe1bbcaa3e5efe08",
+        },
+        {
+          name: "🥗 Вкусно и быстро",
+          link: "https://www.notion.so/odva/446ab218c4c44d44bbe2dde8fe472c70?v=f5ec53126359412dbe1bbcaa3e5efe08",
+        },
+        {
+          name: "7️⃣ Seven+",
+          link: "https://www.notion.so/odva/446ab218c4c44d44bbe2dde8fe472c70?v=f5ec53126359412dbe1bbcaa3e5efe08",
+        },
+        {
+          name: "🎮 YourGame (COINT)",
+          link: "https://www.notion.so/odva/446ab218c4c44d44bbe2dde8fe472c70?v=f5ec53126359412dbe1bbcaa3e5efe08",
+        },
+        {
+          name: "💉 РУДН Клиника",
+          link: "https://www.notion.so/odva/446ab218c4c44d44bbe2dde8fe472c70?v=f5ec53126359412dbe1bbcaa3e5efe08",
+        },
+      ],
     };
   },
   methods: {
@@ -69,6 +95,10 @@ export default {
 h1 {
   text-align: center;
   margin-bottom: 2rem;
+}
+select {
+  font-family: inherit;
+  font-size: 1.5rem;
 }
 .mainlink {
   cursor: pointer;
