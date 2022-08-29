@@ -5,14 +5,14 @@
   padding: 0;
 }
 
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
 body {
   font-family: "Roboto Mono", monospace;
   background-color: #111;
   color: #eee;
-  caret-color: darkorange;
-}
-
-*::selection {
-  background-color: orange;
-  color: #111;
 }

@@ -1,6 +1,5 @@
 <template>
   <h1>O&#8322; Reporter</h1>
-
   <div class="app">
     <textarea
       class="raw"
@@ -61,23 +60,23 @@ export default {
       projects: [
         {
           name: "🌕 Serenity Основной сайт",
-          link: "https://www.notion.so/odva/446ab218c4c44d44bbe2dde8fe472c70?v=f5ec53126359412dbe1bbcaa3e5efe08",
+          link: "https://noto.li/Z8ZDpC",
         },
         {
           name: "🥗 Вкусно и быстро",
-          link: "https://www.notion.so/odva/446ab218c4c44d44bbe2dde8fe472c70?v=f5ec53126359412dbe1bbcaa3e5efe08",
+          link: "https://noto.li/RI1cjr",
         },
         {
           name: "7️⃣ Seven+",
-          link: "https://www.notion.so/odva/446ab218c4c44d44bbe2dde8fe472c70?v=f5ec53126359412dbe1bbcaa3e5efe08",
+          link: "https://noto.li/I7tzu5",
         },
         {
           name: "🎮 YourGame (COINT)",
-          link: "https://www.notion.so/odva/446ab218c4c44d44bbe2dde8fe472c70?v=f5ec53126359412dbe1bbcaa3e5efe08",
+          link: "https://noto.li/tDWQi4",
         },
         {
           name: "💉 РУДН Клиника",
-          link: "https://www.notion.so/odva/446ab218c4c44d44bbe2dde8fe472c70?v=f5ec53126359412dbe1bbcaa3e5efe08",
+          link: "https://noto.li/Lvu0fX",
         },
       ],
     };
@@ -105,12 +104,20 @@ export default {
 
 <style>
 h1 {
+  margin-top: 2rem;
   text-align: center;
 }
 select {
   text-align: center;
   font-family: inherit;
   font-size: 1.5rem;
+  background: repeating-linear-gradient(
+    -45deg,
+    #fff,
+    #fff 2rem,
+    #f7f7f7 2rem,
+    #f7f7f7 4rem
+  );
 }
 .mainlink {
   cursor: pointer;
@@ -121,12 +128,14 @@ select {
   padding: 1rem 3rem;
 }
 .app {
+  margin-block: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 .help {
   text-align: center;
   color: #999;
+  margin-bottom: 2rem;
 }
 .help h2 {
   color: #ddd;
@@ -137,13 +146,12 @@ span span {
 .raw,
 .code {
   padding: 3rem;
+  font-size: 1rem;
 }
 .raw {
-  font-size: 1rem;
   font-family: inherit;
 }
 .code {
-  font-size: 0.75rem;
   background-color: #222;
 }
 </style>
