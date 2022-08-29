@@ -1,8 +1,6 @@
 <template>
-  <a class="mainlink" target="_blank" href="https://report.odva.pro/"
-    >Go to Report</a
-  >
   <h1>O&#8322; Reporter</h1>
+
   <div class="app">
     <textarea
       class="raw"
@@ -12,7 +10,7 @@
       cols="30"
       rows="10"
     ></textarea>
-    <div class="code">
+    <div ref="output" class="code">
       <span
         >&lt;a class="report" <span>href</span>="{{
           test.split(/\r?\n/)[0]
@@ -34,6 +32,7 @@
       <span>&lt;/a&gt;</span>
     </div>
   </div>
+  <div @click="copyAndGo" class="mainlink">Go to Report</div>
   <div class="help">
     <h2>Как это работает</h2>
     <p>В первую строчку идет ссылка — не забудьте https://</p>
@@ -52,8 +51,16 @@ export default {
   data() {
     return {
       test: "",
-      // length: test.split(/\r?\n/).length,
     };
+  },
+  methods: {
+    copy() {
+      navigator.clipboard.writeText(this.$refs.output.textContent);
+    },
+    copyAndGo() {
+      this.copy();
+      window.open("https://report.odva.pro/");
+    },
   },
 };
 </script>
@@ -64,6 +71,7 @@ h1 {
   margin-bottom: 2rem;
 }
 .mainlink {
+  cursor: pointer;
   background-color: #ddd;
   color: #111;
   display: block;
