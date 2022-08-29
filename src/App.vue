@@ -140,9 +140,6 @@ select {
 .help h2 {
   color: #ddd;
 }
-span span {
-  color: orange;
-}
 .raw,
 .code {
   padding: 3rem;

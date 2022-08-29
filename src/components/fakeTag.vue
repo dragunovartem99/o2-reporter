@@ -10,7 +10,7 @@ export default {
 </script>
 <style scoped>
 span {
-  color: orange;
+  color: #999;
 }
 .faketag {
   margin-left: 1rem;
