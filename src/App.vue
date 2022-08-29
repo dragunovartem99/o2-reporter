@@ -25,7 +25,7 @@
       </div>
       <fakeTag tag="style">
         <span
-          >.calendar-day[data-success="1"]{background-color:orange}.report{color:#111}.report
+          >.report{color:#111}.report
           h2{font-weight:bold;margin-bottom:2rem;font-size:3rem}.report
           p:last-of-type{margin-bottom:-1rem}</span
         >
@@ -106,7 +106,6 @@ export default {
 <style>
 h1 {
   text-align: center;
-  margin-bottom: 2rem;
 }
 select {
   text-align: center;
@@ -115,7 +114,7 @@ select {
 }
 .mainlink {
   cursor: pointer;
-  background-color: #ddd;
+  background-color: darkorange;
   color: #111;
   display: block;
   text-align: center;
@@ -137,8 +136,11 @@ span span {
 }
 .raw,
 .code {
-  flex-basis: 50%;
   padding: 3rem;
+}
+.raw {
+  font-size: 1rem;
+  font-family: inherit;
 }
 .code {
   font-size: 0.75rem;
