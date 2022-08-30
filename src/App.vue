@@ -59,12 +59,40 @@ export default {
       userInput: "",
       projects: [
         {
-          name: "🌕 Serenity Основной сайт",
-          link: "https://noto.li/Z8ZDpC",
+          name: "🌹 Букет Питер",
+          link: "https://noto.li/jRvxxg",
         },
         {
           name: "🥗 Вкусно и быстро",
           link: "https://noto.li/RI1cjr",
+        },
+        {
+          name: "💉 РУДН Клиника",
+          link: "https://noto.li/Lvu0fX",
+        },
+        {
+          name: "📃 СРДО",
+          link: "https://noto.li/7sbHeM",
+        },
+        {
+          name: "💄 Beauty Community",
+          link: "https://noto.li/0aoCC2",
+        },
+        {
+          name: "👩‍🔬 Estet",
+          link: "https://noto.li/s5Cx0f",
+        },
+        {
+          name: "🌕 Serenity Основной сайт",
+          link: "https://noto.li/Z8ZDpC",
+        },
+        {
+          name: "🧑🏻‍💼 Serenity Pulse",
+          link: "https://noto.li/QI3pYQ",
+        },
+        {
+          name: "🔫 Serenity Quarta",
+          link: "https://noto.li/mJIIVv",
         },
         {
           name: "7️⃣ Seven+",
@@ -73,10 +101,6 @@ export default {
         {
           name: "🎮 YourGame (COINT)",
           link: "https://noto.li/tDWQi4",
-        },
-        {
-          name: "💉 РУДН Клиника",
-          link: "https://noto.li/Lvu0fX",
         },
       ],
     };
@@ -93,7 +117,6 @@ export default {
         "\n";
       this.$refs.input.focus();
     },
-
     copy() {
       navigator.clipboard.writeText(this.$refs.output.textContent);
     },
