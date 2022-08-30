@@ -41,9 +41,9 @@
   </div>
   <div class="help">
     <h2>Как это работает</h2>
-    <p>В первую строку идет ссылка — не забудьте https://</p>
-    <p>Во вторую строку идет название задачи</p>
-    <p>При желании можно добавить описание (3 строчка и далее)</p>
+    <p>В первую строку идет ссылка на доску <em>(не забудьте https://)</em></p>
+    <p>Во вторую строку идет название проекта</p>
+    <p>В третью строку — конкретные результаты</p>
   </div>
 </template>
 
@@ -110,6 +110,7 @@ export default {
       const selectedProject = this.projects.find(
         (o) => o.name === event.target.value
       );
+      if (!selectedProject) this.userInput = "";
       this.userInput =
         selectedProject.link +
         "\n" +
@@ -132,6 +133,10 @@ export default {
 h1 {
   margin-top: 2rem;
   text-align: center;
+}
+
+h1 span {
+  color: #f5c55d;
 }
 
 .mainlink,
@@ -172,8 +177,18 @@ select {
   color: #aaa;
   margin-bottom: 2rem;
 }
-.help h2 {
+.help h2,
+.help em {
   color: #eee;
+}
+.help p:not(:last-child) {
+  margin-bottom: 1rem;
+}
+.help h2 {
+  margin-bottom: 1rem;
+}
+.help em {
+  font-style: normal;
 }
 .raw,
 .code {
