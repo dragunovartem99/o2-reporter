@@ -11,10 +11,10 @@
       rows="10"
     ></textarea>
     <div ref="output" class="code">
-      <span
-        >&lt;a class="report" <span>href</span>="{{
-          userInput.split(/\r?\n/)[0]
-        }}"&gt;</span
+      <span>
+        <span>&lt;a</span> <span class="code--bleak">class="report" href="</span
+        >{{ userInput.split(/\r?\n/)[0] }}<span class="code--bleak">"</span
+        ><span>&gt;</span></span
       >
       <fakeTag tag="h2">{{ userInput.split(/\r?\n/)[1] }}</fakeTag>
       <div v-if="userInput.split(/\r?\n/)[1]">
@@ -22,14 +22,14 @@
           userInput.split(/\r?\n/)[n + 1]
         }}</fakeTag>
       </div>
-      <fakeTag tag="style">
+      <fakeTag class="code--bleak" tag="style">
         <span
           >.report{color:#111}.report
           h2{font-weight:bold;margin-bottom:2rem;font-size:3rem}.report
           p:last-of-type{margin-bottom:-1rem}</span
         >
       </fakeTag>
-      <span>&lt;/a&gt;</span>
+      <span><span>&lt;/a&gt;</span></span>
     </div>
     <select @change="setProject">
       <option>Выбери проект</option>
@@ -41,7 +41,7 @@
   </div>
   <div class="help">
     <h2>Как это работает</h2>
-    <p>В первую строчку идет ссылка — не забудьте https://</p>
+    <p>В первую строку идет ссылка — не забудьте https://</p>
     <p>Во вторую строку идет название задачи</p>
     <p>При желании можно добавить описание (3 строчка и далее)</p>
   </div>
@@ -107,10 +107,15 @@ h1 {
   margin-top: 2rem;
   text-align: center;
 }
+
+.mainlink,
+select {
+  font-size: 1.25rem;
+}
+
 select {
   text-align: center;
   font-family: inherit;
-  font-size: 1.5rem;
   background: repeating-linear-gradient(
     -45deg,
     #fff,
@@ -134,11 +139,11 @@ select {
 }
 .help {
   text-align: center;
-  color: #999;
+  color: #aaa;
   margin-bottom: 2rem;
 }
 .help h2 {
-  color: #ddd;
+  color: #eee;
 }
 .raw,
 .code {
@@ -147,8 +152,15 @@ select {
 }
 .raw {
   font-family: inherit;
+  resize: none;
 }
 .code {
-  background-color: #222;
+  background-color: #1a1a1a;
+}
+span span {
+  color: #6a6a6a;
+}
+.code--bleak {
+  color: #aaa;
 }
 </style>
