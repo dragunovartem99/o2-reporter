@@ -87,7 +87,10 @@ export default {
         (o) => o.name === event.target.value
       );
       this.userInput =
-        selectedProject.link + "\n" + selectedProject.name + "\n";
+        selectedProject.link +
+        "\n" +
+        selectedProject.name.split(" ").slice(1).join(" ") +
+        "\n";
       this.$refs.input.focus();
     },
 
