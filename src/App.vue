@@ -37,7 +37,7 @@
         {{ project.name }}
       </option>
     </select>
-    <div @click="copyAndGo" class="mainlink">Go to Report</div>
+    <div @click="copyAndGo" class="mainlink">Зарепортить</div>
   </div>
   <div class="help">
     <h2>Как это работает</h2>
@@ -144,10 +144,10 @@ select {
   font-family: inherit;
   background: repeating-linear-gradient(
     -45deg,
-    #fff,
-    #fff 2rem,
-    #f7f7f7 2rem,
-    #f7f7f7 4rem
+    #eee,
+    #eee 2rem,
+    #e7e7e7 2rem,
+    #e7e7e7 4rem
   );
 }
 .mainlink {
@@ -157,6 +157,7 @@ select {
   display: block;
   text-align: center;
   padding: 1rem 3rem;
+  transition: background-color 0.3s ease;
 }
 .mainlink:hover {
   background-color: #f5c55d;
@@ -182,6 +183,7 @@ select {
 .raw {
   font-family: inherit;
   resize: none;
+  background-color: #eee;
 }
 .code {
   background-color: #1a1a1a;
