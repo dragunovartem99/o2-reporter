@@ -152,11 +152,14 @@ select {
 }
 .mainlink {
   cursor: pointer;
-  background-color: darkorange;
+  background-color: #f4bb44;
   color: #111;
   display: block;
   text-align: center;
   padding: 1rem 3rem;
+}
+.mainlink:hover {
+  background-color: #f5c55d;
 }
 .app {
   margin-block: auto;
